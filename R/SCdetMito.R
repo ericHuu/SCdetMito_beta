@@ -157,7 +157,7 @@ SCdetMito <- function(
 
 
     # Create an empty data frame to store the results and an empty list to store the plots
-    results <- data.frame()
+    results <- data()
     plots <- list()
 
     # Loop through each row (sample) in the sample_counts_by_mito data frame
@@ -176,8 +176,8 @@ SCdetMito <- function(
                 a <- data.frame(count_bef = c(n[k - 1], n[k]), 
                 count_af = c(n[k - 1] - n[k], n[k] - n[k + 1]))
 
-                # Perform a chi-squared test on the data frame to test for a significant difference between the counts
-                p <- chisq.test(a, 
+                # Perform a test on the data frame to test for a significant difference between the counts
+                p <- test(a, 
                 correct = F)
 
                 # Adjust the p-value using the false discovery rate (FDR) method
@@ -220,9 +220,9 @@ SCdetMito <- function(
             linewidth = 0.68, 
             color = "tomato") +
             ggplot2::theme(
-                panel.background = ggplot2::element_blank(),
+                panel.background = ggplot2:element_blank(),
                 axis.line = ggplot2::element_line(colour = "black"),
-                panel.border = ggplot2::element_rect(colour = "black", 
+                panel.border = ggplot2:element_rect(colour = "black", 
                 fill = NA),
                 axis.text.x = ggplot2::element_text(angle = 45, 
                 hjust = 1)
