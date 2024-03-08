@@ -1,13 +1,8 @@
-# myFirstNew
-
-# my fisrt R package
+# SCdetMito_beta
 
 # install by
-install_github("ericHuu/myFirstNew")
+install_github("ericHuu/SCdetMito_beta")
 
-# load and test by
-library(myFirstNew)
-myFirst("sjakjdsa")  # any input returned by the author name "husilu"
+# Load
+library(SCdetMito_beta)
 
-# you get
-husilu
