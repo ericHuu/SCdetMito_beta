@@ -1,12 +1,21 @@
-Package: myFirst
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Package: SCdetMito
+Title: SCdetMito: An R Package for Detecting Optimal mitoRatio in Single-Cell RNA-Seq Data Quality Control
+Version: 1.0
+Authors@R: person("Silu Hu", email = "erichu121@foxmail.com", role = c("aut", "cre"))
+Description: Implements a comprehensive set of functions for detecting change points in mitochondrial ratio (mitoRatio) across single-cell samples. SCdetMito is specifically designed for the analysis of mitochondrial content variations in single-cell RNA sequencing data. It offers methods to identify significant change points and visualize patterns of mitoRatio alterations, making it particularly useful for exploring mitochondrial dynamics in single-cell studies. The package contributes to data quality control in single-cell RNA-seq experiments.
+Imports:
+  reshape2,
+  ggplot2,
+  gridExtra,
+  tidyverse,
+  DoubletFinder,
+  mindr,
+  Seurat,
+  multtest,
+  SeuratData,
+  RColorBrewer
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
+Date: 2024-01-09
