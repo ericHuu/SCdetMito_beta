@@ -95,4 +95,15 @@ qcpassed_pbmc3k <- SCQCmulti(pbmc3k,
 ### Check data after QC
 dim(qcpassed_pbmc3k)
 
-
+# Citation
+citation("SCdetMito")
+  Silu Hu (2024). _SCdetMito: SCdetMito: An R Package for Detecting
+  Optimal mitoRatio in Single-Cell RNA-Seq Data Quality Control_. R
+  package version 1.0.
+  @Manual{,
+    title = {SCdetMito: SCdetMito: An R Package for Detecting Optimal mitoRatio in
+Single-Cell RNA-Seq Data Quality Control},
+    author = {{Silu Hu}},
+    year = {2024},
+    note = {R package version 1.0},
+  }
