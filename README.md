@@ -42,6 +42,6 @@ qcpassed_pbmc3k_A <- SCQCone(pbmc3k_A,
     max_mito = "SCdetMito",
     removeDouble = TRUE
 )
-<img>https://github.com/ericHuu/SCdetMito_beta/blob/main/your-mito-change-point-detect.pdf<img>
+![img]https://github.com/ericHuu/SCdetMito_beta/blob/main/img/your-mito-change-point-detect.pdf
 ### check data after QC
 dim(qcpassed_pbmc3k_A) 
