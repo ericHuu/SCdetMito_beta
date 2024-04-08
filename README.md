@@ -1,4 +1,8 @@
-# 01 SCdetMito_beta
+# SCdetMito_beta: An R Package for Detecting Optimal mitoRatio in Single-Cell RNA-Seq Data Quality Control
+Version: 1.0
+Authors@R: person("Silu Hu", email = "erichu121@foxmail.com", role = c("aut", "cre"))
+
+# 01 Introduction
 Implements a comprehensive set of functions for detecting change points in the mitochondrial ratio (mitoRatio) across single-cell samples. SCdetMito is specifically designed for the analysis of mitochondrial content variations in single-cell RNA sequencing data. It offers methods to identify significant change points and visualize patterns of mitoRatio alterations, making it particularly useful for exploring mitochondrial dynamics in single-cell studies. The package contributes to data quality control in single-cell RNA-seq experiments.
 
 # 02 install by
