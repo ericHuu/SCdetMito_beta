@@ -95,6 +95,8 @@ qcpassed_pbmc3k <- SCQCmulti(pbmc3k,
 ### Check data after QC
 dim(qcpassed_pbmc3k)
 
+![image](https://github.com/ericHuu/SCdetMito_beta/blob/main/img/your-mito-change-point-detect-M.png)
+
 # Citation
 citation("SCdetMito")
   Silu Hu (2024). _SCdetMito: SCdetMito: An R Package for Detecting
