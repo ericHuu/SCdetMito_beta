@@ -98,6 +98,7 @@ dim(qcpassed_pbmc3k)
 ![image](https://github.com/ericHuu/SCdetMito_beta/blob/main/img/your-mito-change-point-detect-M.png)
 
 # Citation
+'''
 citation("SCdetMito")
   Silu Hu (2024). _SCdetMito: SCdetMito: An R Package for Detecting
   Optimal mitoRatio in Single-Cell RNA-Seq Data Quality Control_. R
@@ -109,3 +110,4 @@ Single-Cell RNA-Seq Data Quality Control},
     year = {2024},
     note = {R package version 1.0},
   }
+'''
