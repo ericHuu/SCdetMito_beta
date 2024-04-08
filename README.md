@@ -12,17 +12,18 @@ install_github("ericHuu/SCdetMito_beta")
 library(SCdetMito_beta)
 
 # 04 QC for One sample 
-## 04-1 InstallData("pbmc3k")
+## 04-1 take pbmc3k as example
+InstallData("pbmc3k")
 data("pbmc3k")
 library(Seurat)
 pbmc3k$mitoRatio <- PercentageFeatureSet(object = pbmc3k, pattern = "^MT-") / 100
-## 04-2 generate test samples
+## 04-2 Generate test samples
 dim(pbmc3k)
 pbmc3k$samples <- rep(
     c("A", "B", "C"),
     c(900, 900, 900)
 )
-## 04-3 select A for QC
+## 04-3 Select A for QC
 Idents(pbmc3k) <- pbmc3k$samples
 pbmc3k_A <- subset(pbmc3k,
     idents = "A"
@@ -32,14 +33,14 @@ qcpassed_pbmc3k_A <- SCQCone(pbmc3k_A,
     max_mito = 0.06,
     removeDouble = TRUE
 )
-### check data after QC
+### Check data after QC
 dim(qcpassed_pbmc3k_A)
 ### qc： optional-2, set max_mito to 6%, removeDouble = FALSE
 qcpassed_pbmc3k_A <- SCQCone(pbmc3k_A,
     max_mito = 0.06,
     removeDouble = FALSE
 )
-### check data after QC
+### Check data after QC
 dim(qcpassed_pbmc3k_A)
 ### qc： optional-3, by SCdetMito (7%), removeDouble = TRUE
 qcpassed_pbmc3k_A <- SCQCone(pbmc3k_A,
@@ -47,5 +48,51 @@ qcpassed_pbmc3k_A <- SCQCone(pbmc3k_A,
     removeDouble = TRUE
 )
 ![image](https://github.com/ericHuu/SCdetMito_beta/blob/main/img/your-mito-change-point-detect.png)
-### check data after QC
+### Check data after QC
 dim(qcpassed_pbmc3k_A) 
+
+# 05 QC for multiple samples
+## 05-1 take pbmc3k as example
+InstallData("pbmc3k")
+data("pbmc3k")
+library(Seurat)
+pbmc3k$mitoRatio <- PercentageFeatureSet(object = pbmc3k, pattern = "^MT-") / 100
+## 05-2 Generate test samples
+dim(pbmc3k)
+pbmc3k$samples <- rep(
+    c("A", "B", "C"),
+    c(900, 900, 900)
+)
+head(pbmc3k)
+## 05-3 QC for 3 samples
+### qc： optional-1, set max_mito as 6%, removeDouble = TRUE (or FALSE)
+qcpassed_pbmc3k <- SCQCmulti(pbmc3k,
+    by = "samples",
+    mode = "all",
+    max_mito = "SCdetMito",
+    removeDouble = TRUE
+)
+### Check data after QC
+dim(qcpassed_pbmc3k)
+
+### qc： optional-2, by SCdetMito, removeDouble = TRUE, mode = "all"
+qcpassed_pbmc3k <- SCQCmulti(pbmc3k,
+    by = "samples",
+    mode = "all",
+    max_mito = "SCdetMito",
+    removeDouble = T
+)
+### Check data after QC
+dim(qcpassed_pbmc3k)
+
+### qc： optional-3, by SCdetMito, removeDouble = FALSE, mode = "split"
+qcpassed_pbmc3k <- SCQCmulti(pbmc3k,
+    by = "samples",
+    mode = "split",
+    max_mito = "SCdetMito",
+    removeDouble = FALSE
+)
+### Check data after QC
+dim(qcpassed_pbmc3k)
+
+
