@@ -1,4 +1,4 @@
-# SCdetMito（beta）: An R Package for Detecting Optimal mitoRatio in Single-Cell RNA-Seq Data Quality Control
+# SCdetMito_beta: An R Package for Detecting Optimal mitoRatio in Single-Cell RNA-Seq Data Quality Control
 Version: 1.0
 Authors@R: person("Silu Hu", email = "erichu121@foxmail.com", role = c("aut", "cre"))
 
